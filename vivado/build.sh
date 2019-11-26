@@ -10,6 +10,6 @@ if ! [[ $(pwd) = */rocket-chip/vivado ]]; then
 fi
 
 renice -n 10 $$
-make -j `nproc` -C ../vsim verilog CONFIG=ADMPCIE9H7Config
+make -j `nproc` -C ../vsim verilog CONFIG=ZedboardConfig
 rm -rf .Xil rocket_board_design rocket_ip_core
 vivado -mode batch -source "all.tcl" -nojournal -nolog

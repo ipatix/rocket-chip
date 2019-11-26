@@ -1,3 +1,3 @@
-open_project /home/inf3/ar42enus/Documents/rocket_cpu_zedboard_system/rocket_cpu_zedboard_system.xpr
-launch_sdk -workspace /home/inf3/ar42enus/Documents/rocket_cpu_zedboard_system/rocket_cpu_zedboard_system.sdk -hwspec /home/inf3/ar42enus/Documents/rocket_cpu_zedboard_system/rocket_cpu_zedboard_system.sdk/main_design_wrapper.hdf
+open_project rocket_board_design/rocket_board_design.xpr
+launch_sdk -workspace rocket_board_design/rocket_board_design.sdk -hwspec rocket_board_design/rocket_board_design.sdk/main_design_wrapper.hdf
 close_project

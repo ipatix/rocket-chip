@@ -1,8 +1,8 @@
 /dts-v1/;
 
 / {
-	#address-cells = <2>;
-	#size-cells = <2>;
+	#address-cells = <1>;
+	#size-cells = <1>;
 	compatible = "freechips,rocketchip-unknown-dev";
 	model = "freechips,rocketchip-unknown";
 	L12: cpus {
@@ -41,29 +41,29 @@
 	};
 	L7: memory@80000000 {
 		device_type = "memory";
-		reg = <0x0 0x80000000 0x2 0x0>;
+		reg = <0x80000000 0x1ff00000>;
 	};
 	L11: soc {
-		#address-cells = <2>;
-		#size-cells = <2>;
+		#address-cells = <1>;
+		#size-cells = <1>;
 		compatible = "freechips,rocketchip-unknown-soc", "simple-bus";
 		ranges;
 		L2: clint@2000000 {
 			compatible = "riscv,clint0";
 			interrupts-extended = <&L3 3 &L3 7>;
-			reg = <0x0 0x2000000 0x0 0x10000>;
+			reg = <0x2000000 0x10000>;
 			reg-names = "control";
 		};
 		L0: error-device@3000 {
 			compatible = "sifive,error0";
-			reg = <0x0 0x3000 0x0 0x1000>;
+			reg = <0x3000 0x1000>;
 		};
 		L1: interrupt-controller@c000000 {
 			#interrupt-cells = <1>;
 			compatible = "riscv,plic0";
 			interrupt-controller;
 			interrupts-extended = <&L3 11 &L3 9>;
-			reg = <0x0 0xc000000 0x0 0x4000000>;
+			reg = <0xc000000 0x4000000>;
 			reg-names = "control";
 			riscv,max-priority = <3>;
 			riscv,ndev = <3>;
@@ -72,16 +72,16 @@
 			#address-cells = <1>;
 			#size-cells = <1>;
 			compatible = "simple-bus";
-			ranges = <0x60000000 0x0 0x60000000 0x20000000>;
+			ranges = <0x60000000 0x60000000 0x20000000>;
 		};
 		L9: rom@10000 {
 			compatible = "sifive,rom0";
-			reg = <0x0 0x10000 0x0 0x10000>;
+			reg = <0x10000 0x10000>;
 			reg-names = "mem";
 		};
         L200: uartlite_0@60000000 {
             compatible = "xlnx,axi-uartlite-1.02.a", "xlnx,xps-uartlite-1.00.a";
-            reg = <0x0 0x60000000 0x0 0x10000>;
+            reg = <0x60000000 0x10000>;
             current-speed = <115200>;
             device_type = "serial";
             interrupt-parent = <&L1>;
@@ -90,7 +90,7 @@
         };
         L201: uartlite_1@60010000 {
             compatible = "xlnx,axi-uartlite-1.02.a", "xlnx,xps-uartlite-1.00.a";
-            reg = <0x0 0x60010000 0x0 0x10000>;
+            reg = <0x60010000 0x10000>;
             current-speed = <115200>;
             device_type = "serial";
             interrupt-parent = <&L1>;
@@ -103,7 +103,7 @@
             device_type = "serial";
             interrupt-parent = <&L1>;
             interrupts = <3>;
-            reg = <0x0 0x60020000 0x0 0x10000>;
+            reg = <0x60020000 0x10000>;
             reg-offset = <0x1000>;
             reg-shift = <2>;
             xlnx,external-xin-clk-hz = <50000000>;
@@ -119,7 +119,7 @@
             #gpio-cells = <2>;
             compatible = "xlnx,xps-gpio-1.00.a";
             gpio-controller;
-            reg = <0x0 0x60040000 0x0 0x10000>;
+            reg = <0x60040000 0x10000>;
             xlnx,all-inputs = <0x0>;
             xlnx,all-inputs-2 = <0xFF>;
             xlnx,dout-default = <0x0>;
