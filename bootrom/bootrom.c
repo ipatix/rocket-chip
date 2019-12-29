@@ -43,7 +43,7 @@ typedef struct {
 } AXIUart16550;
 
 // 50 MHz
-#define AXI_CLOCK 50000000
+#define AXI_CLOCK 150000000
 
 #define UART16550_BAUD 115200
 #define CONSOLE_BAUD 115200

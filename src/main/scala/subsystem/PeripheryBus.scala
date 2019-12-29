@@ -18,7 +18,7 @@ case class PeripheryBusParams(
     beatBytes: Int,
     blockBytes: Int,
     atomics: Option[BusAtomics] = Some(BusAtomics()),
-    frequency: BigInt = BigInt(50000000), // 50 MHz as default bus frequency
+    frequency: BigInt = BigInt(150000000), // 150 MHz as default bus frequency
     zeroDevice: Option[AddressSet] = None,
     errorDevice: Option[DevNullParams] = None,
     replicatorMask: BigInt = 0)

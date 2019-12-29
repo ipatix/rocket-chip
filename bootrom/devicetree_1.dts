@@ -10,7 +10,7 @@
 		#size-cells = <0>;
         timebase-frequency = <1000000>;
 		L5: cpu@0 {
-			clock-frequency = <50000000>;
+			clock-frequency = <150000000>;
 			compatible = "sifive,rocket0", "riscv";
 			d-cache-block-size = <64>;
 			d-cache-sets = <64>;
@@ -86,7 +86,7 @@
             device_type = "serial";
             interrupt-parent = <&L1>;
             interrupts = <1>;
-            clock = <50000000>;
+            clock = <150000000>;
         };
         L201: uartlite_1@60010000 {
             compatible = "xlnx,axi-uartlite-1.02.a", "xlnx,xps-uartlite-1.00.a";
@@ -95,10 +95,10 @@
             device_type = "serial";
             interrupt-parent = <&L1>;
             interrupts = <2>;
-            clock = <50000000>;
+            clock = <150000000>;
         };
         L202: serial@60020000 {
-            clock-frequency = <50000000>;
+            clock-frequency = <150000000>;
             compatible = "xlnx,xps-uart16550-2.00.a", "ns16550a";
             device_type = "serial";
             interrupt-parent = <&L1>;
@@ -106,12 +106,12 @@
             reg = <0x0 0x60020000 0x0 0x10000>;
             reg-offset = <0x1000>;
             reg-shift = <2>;
-            xlnx,external-xin-clk-hz = <50000000>;
+            xlnx,external-xin-clk-hz = <150000000>;
             xlnx,family = "zynq";
             xlnx,has-external-rclk = <0x0>;
             xlnx,has-external-xin = <0x0>;
             xlnx,is-a-16550 = <0x1>;
-            XLNx,s-axi-aclk-freq-hz = <50000000>;
+            XLNx,s-axi-aclk-freq-hz = <150000000>;
             xlnx,use-modem-ports = <0x0>;
             xlnx,use-user-ports = <0x0>;
         };

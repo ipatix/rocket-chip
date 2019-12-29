@@ -1,4 +1,4 @@
-set sys_clock 50.000
+set sys_clock 150.000
 
 # create project
 create_project rocket_board_design rocket_board_design -part xcvu37p-fsvh2892-2-e-es1
